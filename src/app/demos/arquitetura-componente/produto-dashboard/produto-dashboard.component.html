@@ -3,6 +3,13 @@
     <div class="row text-center">
       
       <produto-count [produtos]="produtos" > </produto-count>
-      <produto-card-detalhe class="col-md-4" *ngFor="let produto of produtos"   [produto]="produto" ></produto-card-detalhe>
+
+      <produto-card-detalhe class="col-md-4" *ngFor="let produto of produtos" 
+      [produto]="produto"
+      (status)="mudarStatus($event)" >
+      <h5>Usado para passar conteudo</h5>
+      <h5 class="acabou">select class </h5>
+      </produto-card-detalhe>
     </div>
 </div>
+
