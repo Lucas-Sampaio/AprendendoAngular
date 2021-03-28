@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { rootRouterConfig } from './app.route';
 import { APP_BASE_HREF } from '@angular/common';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
@@ -17,8 +18,10 @@ import { SobreComponent } from './institucional/sobre/sobre.component';
 import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.component';
 import { ProdutoService } from './produtos/produtos.service';
 import { HttpClientModule } from '@angular/common/http';
-
-
+import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.component';
+import { NgBrazil } from 'ng-brazil' 
+import { TextMaskModule } from 'angular2-text-mask';
+import { CustomFormsModule } from 'ng2-validation';
 
 @NgModule({
   declarations: [
@@ -28,11 +31,17 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     ContatoComponent,
     SobreComponent,
-    ListaProdutoComponent
+    ListaProdutoComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    TextMaskModule,
+    NgBrazil,
+    CustomFormsModule,
     [RouterModule.forRoot(rootRouterConfig)]
   ],
   providers: [
