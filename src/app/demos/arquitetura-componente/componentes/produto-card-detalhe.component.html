@@ -1,0 +1,15 @@
+
+    <div class="card h-100">
+        <a class="text-decoration-none" [routerLink]="['/produto-detalhe', produto.id]">
+            <div style="align-content:center;">
+                <img src="/assets/{{ produto.imagem }}" height="164px" width="253px" alt="">
+            </div>
+        </a>
+        <h4 class="card-title">{{ produto.nome | titlecase }}</h4>
+
+        <div class="card-footer">
+            <a class="btn btn-primary" [routerLink]="['/carrinho',produto.id]">
+                <span class="fa fa-shopping-cart"></span> Comprar
+            </a>
+        </div>
+    </div>
