@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { fromEvent, Observable } from 'rxjs';
 import { Produto } from '../models/Produto';
 
 
@@ -8,11 +9,21 @@ import { Produto } from '../models/Produto';
   styles: [
   ]
 })
-export class ProdutoDashboardComponent implements OnInit {
+export class ProdutoDashboardComponent implements OnInit,AfterViewInit {
 
   produtos:Produto[];
 
+  @ViewChild('teste',{ static: false}) 
+  mensagemTela: ElementRef;
+
   constructor() { }
+  ngAfterViewInit(): void {
+    let clickTexto : Observable<any> = fromEvent(this.mensagemTela.nativeElement,'click');
+    clickTexto.subscribe(() => {
+      alert('clicou no texto');
+      return; // pra não entrar em loop
+    } )
+  }
 
   ngOnInit(): void {
     this.produtos = [{
@@ -58,7 +69,7 @@ export class ProdutoDashboardComponent implements OnInit {
       imagem: 'headset.jpg'
     }];
   }
-  
+
   mudarStatus(event : Produto){
     event.ativo = !event.ativo;
   }
