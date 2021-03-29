@@ -1,4 +1,6 @@
 
+<div class="container main-container">
+
     <div class="card h-100">
         <a class="text-decoration-none" [routerLink]="['/produto-detalhe', produto.id]">
             <div style="align-content:center;">
@@ -15,10 +17,12 @@
             </div>
         </div>
         <div class="card-footer">
-            <a [ngClass]="produto.ativo ? 'btn btn-success' : 'btn btn-danger'" (click)="emitirEvento()" >
+            <a [ngClass]="produto.ativo ? 'btn btn-success' : 'btn btn-danger'" >
                 <span class="fa fa-shopping-cart"></span> Comprar
             </a>
            &nbsp;
            <a class="btn btn-primary" [routerLink]="['editar/', produto.id]">Editar </a>
         </div>
     </div>
+
+</div>
