@@ -21,7 +21,7 @@
                 <span class="fa fa-shopping-cart"></span> Comprar
             </a>
            &nbsp;
-           <a class="btn btn-primary" [routerLink]="['editar/', produto.id]">Editar </a>
+           <a (click)="salvar()" class="btn btn-primary" [routerLink]="['editar/', produto.id]">Salvar </a>
         </div>
     </div>
 
