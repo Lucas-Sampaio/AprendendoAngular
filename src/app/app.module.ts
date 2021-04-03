@@ -14,6 +14,7 @@ import { NgBrazil } from 'ng-brazil'
 import { TextMaskModule } from 'angular2-text-mask';
 import { CustomFormsModule } from 'ng2-validation';
 import { NavegacaoModule } from './navegacao/navegacao.module';
+import { AuthGuard } from './services/app.guard';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NavegacaoModule } from './navegacao/navegacao.module';
     AppRoutingModule
   ],
   providers: [
-    {provide: APP_BASE_HREF,useValue:'/'} //prefixo de rota
+    {provide: APP_BASE_HREF,useValue:'/'}, //prefixo de rota
+     AuthGuard
   ],
   bootstrap: [AppComponent]
 })
