@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Provider } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app.route';
@@ -19,7 +19,13 @@ import { CadastroGuard } from './services/cadastro.guard';
 import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
 import { FileSizePipe } from './demos/pipes/filmes/filesize.pipe';
 import { ImageFormaterPipe } from './demos/pipes/filmes/image.pipe';
+import { BarComponent } from './demos/bar-di-zones/bar/bar.component';
+import { BarModule } from './demos/bar-di-zones/bar/bar.module';
+import { BarServices } from './demos/bar-di-zones/bar/bar.service';
 
+export const BAR_PROVIDERS: Provider[] = [
+  BarServices
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +34,7 @@ import { ImageFormaterPipe } from './demos/pipes/filmes/image.pipe';
     CadastroComponent,
     FilmesComponent,
     FileSizePipe,
-    ImageFormaterPipe
+    ImageFormaterPipe,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +45,8 @@ import { ImageFormaterPipe } from './demos/pipes/filmes/image.pipe';
     NgBrazil,
     CustomFormsModule,
     NavegacaoModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BarModule.forRoot({unidadeId:1000,unidadeToken:'token'})
   ],
   providers: [
     {provide: APP_BASE_HREF,useValue:'/'}, //prefixo de rota
