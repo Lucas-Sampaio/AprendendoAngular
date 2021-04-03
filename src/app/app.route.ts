@@ -7,6 +7,7 @@ import { SobreComponent } from "./institucional/sobre/sobre.component";
 import { HomeComponent } from "./navegacao/home/home.component";
 import { NotfoundComponent } from "./navegacao/notfound/notfound.component";
 import { AuthGuard } from "./services/app.guard";
+import { CadastroGuard } from "./services/cadastro.guard";
 
 
 const rootRouterConfig: Routes = [
@@ -14,7 +15,7 @@ const rootRouterConfig: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'contato', component: ContatoComponent },
     { path: 'sobre', component: SobreComponent },
-    { path: 'cadastro', component: CadastroComponent },
+    { path: 'cadastro', component: CadastroComponent, canDeactivate: [CadastroGuard] },
     {
         path: 'produtos',
         loadChildren: () => import('./demos/arquitetura-componente/produto.module').

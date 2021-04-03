@@ -15,6 +15,7 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { CustomFormsModule } from 'ng2-validation';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 import { AuthGuard } from './services/app.guard';
+import { CadastroGuard } from './services/cadastro.guard';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AuthGuard } from './services/app.guard';
   ],
   providers: [
     {provide: APP_BASE_HREF,useValue:'/'}, //prefixo de rota
-     AuthGuard
+     AuthGuard,
+     CadastroGuard
   ],
   bootstrap: [AppComponent]
 })
