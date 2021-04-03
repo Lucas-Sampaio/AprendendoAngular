@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 
 import { Routes, RouterModule } from "@angular/router";
+import { FilmesComponent } from "./demos/pipes/filmes/filmes.component";
 import { CadastroComponent } from "./demos/reactiveForms/cadastro/cadastro.component";
 import { ContatoComponent } from "./institucional/contato/contato.component";
 import { SobreComponent } from "./institucional/sobre/sobre.component";
@@ -28,6 +29,7 @@ const rootRouterConfig: Routes = [
         canLoad:[AuthGuard], //informa se pode carregar o modulo e apenas pra lazyload
         canActivate: [AuthGuard] //informa se pode acessar
     },
+    { path: 'filmes', component: FilmesComponent },
 
     { path: '**', component: NotfoundComponent },
 ];

@@ -16,6 +16,9 @@ import { CustomFormsModule } from 'ng2-validation';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 import { AuthGuard } from './services/app.guard';
 import { CadastroGuard } from './services/cadastro.guard';
+import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
+import { FileSizePipe } from './demos/pipes/filmes/filesize.pipe';
+import { ImageFormaterPipe } from './demos/pipes/filmes/image.pipe';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import { CadastroGuard } from './services/cadastro.guard';
     ContatoComponent,
     SobreComponent,
     CadastroComponent,
+    FilmesComponent,
+    FileSizePipe,
+    ImageFormaterPipe
   ],
   imports: [
     BrowserModule,
