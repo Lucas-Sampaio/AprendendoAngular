@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { FilmesComponent } from "./demos/pipes/filmes/filmes.component";
 import { CadastroComponent } from "./demos/reactiveForms/cadastro/cadastro.component";
+import { TodoComponent } from "./demos/todo-list/todo.component";
 import { ContatoComponent } from "./institucional/contato/contato.component";
 import { SobreComponent } from "./institucional/sobre/sobre.component";
 import { HomeComponent } from "./navegacao/home/home.component";
@@ -30,7 +31,7 @@ const rootRouterConfig: Routes = [
         canActivate: [AuthGuard] //informa se pode acessar
     },
     { path: 'filmes', component: FilmesComponent },
-
+    { path: 'todo', component: TodoComponent },
     { path: '**', component: NotfoundComponent },
 ];
 

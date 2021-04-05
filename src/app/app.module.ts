@@ -22,6 +22,8 @@ import { ImageFormaterPipe } from './demos/pipes/filmes/image.pipe';
 import { BarComponent } from './demos/bar-di-zones/bar/bar.component';
 import { BarModule } from './demos/bar-di-zones/bar/bar.module';
 import { BarServices } from './demos/bar-di-zones/bar/bar.service';
+import { TodoComponent } from './demos/todo-list/todo.component';
+import { TodoModule } from './demos/todo-list/todo.module';
 
 export const BAR_PROVIDERS: Provider[] = [
   BarServices
@@ -46,7 +48,8 @@ export const BAR_PROVIDERS: Provider[] = [
     CustomFormsModule,
     NavegacaoModule,
     AppRoutingModule,
-    BarModule.forRoot({unidadeId:1000,unidadeToken:'token'})
+    BarModule.forRoot({unidadeId:1000,unidadeToken:'token'}),
+    TodoModule
   ],
   providers: [
     {provide: APP_BASE_HREF,useValue:'/'}, //prefixo de rota
