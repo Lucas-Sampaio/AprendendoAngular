@@ -11,6 +11,7 @@ import { ProdutoCountComponent } from "./componentes/produto-count.component";
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
 import { ProdutoAppComponent } from "./produto.app.component";
 import { ProdutoService } from "./services/produto.service";
+import { ProdutosResolve } from "./services/produto.resolve";
 registerLocaleData(localePt);
 
 @NgModule({
@@ -26,7 +27,8 @@ registerLocaleData(localePt);
         ProdutoRoutingModule
     ],
     providers: [
-        ProdutoService
+        ProdutoService,
+        ProdutosResolve
     ],
     exports: []
 })
